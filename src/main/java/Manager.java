@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 public class Manager {
 
     private String[] movies = new String[0];
-    private int limit;
+    int limit;
 
     public Manager() {
         this.limit = 6;
@@ -12,12 +14,6 @@ public class Manager {
     }
 
     public void addMovie(String movie) {
-        int resultLength;
-        if (movies.length > limit) {
-            resultLength = limit;
-        } else {
-            resultLength = limit;
-        }
         String[] tmp = new String[movies.length + 1];
         for (int i = 0; i < movies.length; i++){
             tmp[i] = movies[i];

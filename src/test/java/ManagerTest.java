@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class ManagerTest {
 
     @Test
@@ -104,10 +106,17 @@ public class ManagerTest {
         manager.addMovie("Film 8");
 
 
-        String[] expected = { "Film 1", "Film 2", "Film 3", "Film 4", "Film 5", "Film 6" };
-        String[] actual = manager.findAll();
+        String[] expected = { "Film 8", "Film 7", "Film 6", "Film 5", "Film 4", "Film 3" };
+        String[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void testManagerConstructor() {
+        int expectedLimit = 10;
+        Manager manager = new Manager(expectedLimit);
+        assertEquals(expectedLimit, manager.limit);
+    }
 }
+
