@@ -114,7 +114,7 @@ public class ManagerTest {
 
     @Test
     public void testManagerConstructor() {
-        int expectedLimit = 10;
+        int expectedLimit = 6;
         Manager manager = new Manager(expectedLimit);
         assertEquals(expectedLimit, manager.limit);
     }
